@@ -127,7 +127,7 @@ Encontrou um bug? Abra uma [issue](https://github.com/AndrewGouvea/urbanis/issue
 * [Wave Function Collapse Algorithm](https://github.com/mxgmn/WaveFunctionCollapse)
 
 ## 📄 Licença
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/AndrewGouvea/urbanis?tab=MIT-1-ov-file#readme) para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/AndrewGouvea/urbanis/blob/main/LICENSE) para mais detalhes.
 
 ## 👤 Autor
 **Andrew Souza**
