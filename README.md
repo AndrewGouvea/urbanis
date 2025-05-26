@@ -116,13 +116,7 @@ Encontrou um bug? Abra uma [issue](https://github.com/AndrewGouvea/urbanis/issue
 
 ## 📈 Estatísticas do Projeto
 
-![GitHub Repo stars](https://img.shields.io/github/stars/AndrewGouvea/urbanis?style=plastic&labelColor=%23555555&color=%2397c900)
-
-![Show Image](https://img.shields.io/github/forks/AndrewGouvea/urbanis?style=plastic&labelColor=%23555555&color=%2397c900)
-
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/AndrewGouvea/urbanis?labelColor=%23555555&color=%2397c900)
-
-![GitHub last commit](https://img.shields.io/github/last-commit/AndrewGouvea/urbanis?labelColor=%23555555&color=%2397c900)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewGouvea/urbanis?style=plastic&labelColor=%23555555&color=%2397c900) ![Show Image](https://img.shields.io/github/forks/AndrewGouvea/urbanis?style=plastic&labelColor=%23555555&color=%2397c900) ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/AndrewGouvea/urbanis?labelColor=%23555555&color=%2397c900) ![GitHub last commit](https://img.shields.io/github/last-commit/AndrewGouvea/urbanis?labelColor=%23555555&color=%2397c900)
 
 
 ## 📚 Inspirações e Referências
