@@ -4,12 +4,69 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "30px Arial";
-    ctx.fillText("Urbanis - Em breve!", 50, 100)
-    render()
+let zoomLevel = 1;
+let panX = 0;
+let panY = 0;
+
+function zoom(zoomFactor, mouseX, mouseY) {
+    const worldX = (mouseX - canvas.width / 2) / zoomLevel + panX;
+    const worldY = (mouseY - canvas.height / 2) / zoomLevel + panY;
+
+    zoomLevel *= zoomFactor;
+
+    panX = worldX - (mouseX - canvas.width / 2) / zoomLevel;
+    panY = worldY - (mouseY - canvas.height / 2) / zoomLevel;
+}
+
+function pan(dx, dy) {
+    panX += dx;
+    panY += dy;
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.save()
+
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.scale(zoomLevel, zoomLevel) ;
+    ctx.translate(-panX, -panY);
+
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0, 0, 100, 100);
+
+    ctx.restore();
+}
+
+canvas.addEventListener('wheel', (event) => {
+    event.preventDefault()
+    const zoomFactor = event.deltaY > 0 ? 0.9 : 1.1;
+    zoom(zoomFactor, event.offsetX, event.offsetY);
+    draw();
 })
 
+let isPanning = false;
+let lastX, lastY;
+
+canvas.addEventListener('mousedown', (event) => {
+    if(event.button === 0) {
+        isPanning = true;
+        lastX = event.offsetX;
+        lastY = event.offsetY;
+    }
+})
+
+canvas.addEventListener('mousemove', (event) => {
+      if(isPanning) {
+        const dx = event.offsetX - lastX;
+        const dy = event.offsetY - lastY;
+        pan(dx, dy);
+        draw();
+        lastX = event.offsetX;
+        lastY = event.offsetY;
+    }
+})
+
+canvas.addEventListener('mouseup', () => {
+    isPanning = false
+});
