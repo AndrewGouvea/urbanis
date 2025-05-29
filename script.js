@@ -2,9 +2,9 @@ import {
   setupCamera,
   applyCameraToContext,
   handleZoomPanEvents,
-} from './core/camera'
-import { generateTerrain } from './core/terrain'
-import { drawTerrain } from './core/renderer'
+} from './core/camera.js'
+import { generateTerrain } from './core/terrain.js'
+import { drawTerrain } from './core/renderer.js'
 
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
@@ -29,5 +29,5 @@ window.addEventListener('resize', () => {
 })
 
 setupCamera()
-handleZoomPanEvents()
+handleZoomPanEvents(canvas, draw)
 draw()
