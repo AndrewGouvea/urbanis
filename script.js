@@ -4,24 +4,13 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let zoomLevel = 1;
-let panX = 0;
-let panY = 0;
 
-function zoom(zoomFactor, mouseX, mouseY) {
-    const worldX = (mouseX - canvas.width / 2) / zoomLevel + panX;
-    const worldY = (mouseY - canvas.height / 2) / zoomLevel + panY;
+const width = 100
+const height = 100
+const tileSize = 10
+const terrain = []
 
-    zoomLevel *= zoomFactor;
-
-    panX = worldX - (mouseX - canvas.width / 2) / zoomLevel;
-    panY = worldY - (mouseY - canvas.height / 2) / zoomLevel;
-}
-
-function pan(dx, dy) {
-    panX += dx;
-    panY += dy;
-}
+noise.seed(Math.random())
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
